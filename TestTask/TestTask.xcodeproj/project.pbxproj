@@ -12,6 +12,7 @@
 		DDF229D32069111000981262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDF229D22069111000981262 /* Assets.xcassets */; };
 		DDF229D62069111000981262 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDF229D42069111000981262 /* LaunchScreen.storyboard */; };
 		DDF229DE2069127B00981262 /* PermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF229DD2069127B00981262 /* PermissionsViewController.swift */; };
+		DDF229E12069309700981262 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF229E02069309700981262 /* Record.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		DDF229D52069111000981262 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDF229D72069111000981262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDF229DD2069127B00981262 /* PermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
+		DDF229E02069309700981262 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		DDF229CA2069111000981262 /* TestTask */ = {
 			isa = PBXGroup;
 			children = (
+				DDF229DF20692FED00981262 /* Model */,
 				DDF229CB2069111000981262 /* AppDelegate.swift */,
 				DDF229DD2069127B00981262 /* PermissionsViewController.swift */,
 				DDF229CF2069111000981262 /* Main.storyboard */,
@@ -62,6 +65,14 @@
 				DDF229D72069111000981262 /* Info.plist */,
 			);
 			path = TestTask;
+			sourceTree = "<group>";
+		};
+		DDF229DF20692FED00981262 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DDF229E02069309700981262 /* Record.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 			files = (
 				DDF229CC2069111000981262 /* AppDelegate.swift in Sources */,
 				DDF229DE2069127B00981262 /* PermissionsViewController.swift in Sources */,
+				DDF229E12069309700981262 /* Record.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
