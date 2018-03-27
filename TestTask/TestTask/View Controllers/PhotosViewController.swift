@@ -13,7 +13,7 @@ import MapKit
 class PhotosViewController: UIViewController {
 
     public static let StoryboardIdentifier = "PhotosViewController"
-    private let mapViewSegueIdentifier = "ShowMapViewController"
+    private let detailsViewControllerSegueIdentifier = "ShowDetailsViewController"
 
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -62,6 +62,17 @@ class PhotosViewController: UIViewController {
         imagePickerController.delegate = self
 
         present(imagePickerController, animated: true, completion: nil)
+    }
+
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard
+            segue.identifier == detailsViewControllerSegueIdentifier,
+            let detailsViewController = segue.destination as? DetailsViewController,
+            let image = sender as? UIImage else { return }
+
+        detailsViewController.image = image
     }
 
 }
@@ -119,7 +130,10 @@ extension PhotosViewController: UICollectionViewDelegate {
         let actionSheet = UIAlertController(title: "Actions", message: nil, preferredStyle: .actionSheet)
 
         let detailsAction = UIAlertAction(title: "Details", style: .default) { [weak self] _ in
-            // TODO: Add details screen
+            guard let strongSelf = self else { return }
+
+            let record = strongSelf.records[indexPath.row]
+            strongSelf.performSegue(withIdentifier: strongSelf.detailsViewControllerSegueIdentifier, sender: record.image)
         }
 
         let mapAction = UIAlertAction(title: "Map", style: .default) { [weak self] _ in

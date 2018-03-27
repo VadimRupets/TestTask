@@ -17,6 +17,7 @@
 		DDF229EC206A2DA800981262 /* RecordsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF229EB206A2DA800981262 /* RecordsManager.swift */; };
 		DDF229F0206A348200981262 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF229EE206A348200981262 /* PhotoCollectionViewCell.swift */; };
 		DDF229F1206A348200981262 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDF229EF206A348200981262 /* PhotoCollectionViewCell.xib */; };
+		DDF229F5206A55FA00981262 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF229F4206A55FA00981262 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		DDF229EB206A2DA800981262 /* RecordsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsManager.swift; sourceTree = "<group>"; };
 		DDF229EE206A348200981262 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		DDF229EF206A348200981262 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		DDF229F4206A55FA00981262 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			children = (
 				DDF229DD2069127B00981262 /* PermissionsViewController.swift */,
 				DDF229E720693CC000981262 /* PhotosViewController.swift */,
+				DDF229F4206A55FA00981262 /* DetailsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				DDF229CC2069111000981262 /* AppDelegate.swift in Sources */,
 				DDF229E820693CC000981262 /* PhotosViewController.swift in Sources */,
 				DDF229DE2069127B00981262 /* PermissionsViewController.swift in Sources */,
+				DDF229F5206A55FA00981262 /* DetailsViewController.swift in Sources */,
 				DDF229E12069309700981262 /* Record.swift in Sources */,
 				DDF229F0206A348200981262 /* PhotoCollectionViewCell.swift in Sources */,
 			);
