@@ -13,6 +13,10 @@
 		DDF229D62069111000981262 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDF229D42069111000981262 /* LaunchScreen.storyboard */; };
 		DDF229DE2069127B00981262 /* PermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF229DD2069127B00981262 /* PermissionsViewController.swift */; };
 		DDF229E12069309700981262 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF229E02069309700981262 /* Record.swift */; };
+		DDF229E820693CC000981262 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF229E720693CC000981262 /* PhotosViewController.swift */; };
+		DDF229EC206A2DA800981262 /* RecordsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF229EB206A2DA800981262 /* RecordsManager.swift */; };
+		DDF229F0206A348200981262 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF229EE206A348200981262 /* PhotoCollectionViewCell.swift */; };
+		DDF229F1206A348200981262 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDF229EF206A348200981262 /* PhotoCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		DDF229D72069111000981262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDF229DD2069127B00981262 /* PermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
 		DDF229E02069309700981262 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		DDF229E720693CC000981262 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		DDF229EB206A2DA800981262 /* RecordsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsManager.swift; sourceTree = "<group>"; };
+		DDF229EE206A348200981262 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		DDF229EF206A348200981262 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +64,10 @@
 		DDF229CA2069111000981262 /* TestTask */ = {
 			isa = PBXGroup;
 			children = (
+				DDF229ED206A346000981262 /* Collection View Cells */,
+				DDF229EA206A2D7A00981262 /* View Controllers */,
 				DDF229DF20692FED00981262 /* Model */,
 				DDF229CB2069111000981262 /* AppDelegate.swift */,
-				DDF229DD2069127B00981262 /* PermissionsViewController.swift */,
 				DDF229CF2069111000981262 /* Main.storyboard */,
 				DDF229D22069111000981262 /* Assets.xcassets */,
 				DDF229D42069111000981262 /* LaunchScreen.storyboard */,
@@ -71,8 +80,27 @@
 			isa = PBXGroup;
 			children = (
 				DDF229E02069309700981262 /* Record.swift */,
+				DDF229EB206A2DA800981262 /* RecordsManager.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DDF229EA206A2D7A00981262 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DDF229DD2069127B00981262 /* PermissionsViewController.swift */,
+				DDF229E720693CC000981262 /* PhotosViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		DDF229ED206A346000981262 /* Collection View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DDF229EE206A348200981262 /* PhotoCollectionViewCell.swift */,
+				DDF229EF206A348200981262 /* PhotoCollectionViewCell.xib */,
+			);
+			path = "Collection View Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDF229D62069111000981262 /* LaunchScreen.storyboard in Resources */,
+				DDF229F1206A348200981262 /* PhotoCollectionViewCell.xib in Resources */,
 				DDF229D32069111000981262 /* Assets.xcassets in Resources */,
 				DDF229D12069111000981262 /* Main.storyboard in Resources */,
 			);
@@ -147,9 +176,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDF229EC206A2DA800981262 /* RecordsManager.swift in Sources */,
 				DDF229CC2069111000981262 /* AppDelegate.swift in Sources */,
+				DDF229E820693CC000981262 /* PhotosViewController.swift in Sources */,
 				DDF229DE2069127B00981262 /* PermissionsViewController.swift in Sources */,
 				DDF229E12069309700981262 /* Record.swift in Sources */,
+				DDF229F0206A348200981262 /* PhotoCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

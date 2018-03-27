@@ -70,5 +70,63 @@
             </objects>
             <point key="canvasLocation" x="434" y="109"/>
         </scene>
+        <!--Photos-->
+        <scene sceneID="pGt-hX-3Xe">
+            <objects>
+                <viewController storyboardIdentifier="PhotosViewController" title="Photos" id="ZEQ-NL-Bl5" customClass="PhotosViewController" customModule="TestTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="prP-cx-BxG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="I84-jq-Lbs">
+                                <rect key="frame" x="8" y="72" width="359" height="587"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="unM-MS-X9b">
+                                    <size key="itemSize" width="75" height="75"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="QCz-sk-xUO">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZEQ-NL-Bl5" id="P8x-YK-6gL"/>
+                                    <outlet property="delegate" destination="ZEQ-NL-Bl5" id="Zgx-3H-WxG"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tOr-Fl-MGD" firstAttribute="trailing" secondItem="I84-jq-Lbs" secondAttribute="trailing" constant="8" id="1C0-zw-F8j"/>
+                            <constraint firstItem="tOr-Fl-MGD" firstAttribute="bottom" secondItem="I84-jq-Lbs" secondAttribute="bottom" constant="8" id="EIS-ca-zJk"/>
+                            <constraint firstItem="I84-jq-Lbs" firstAttribute="top" secondItem="tOr-Fl-MGD" secondAttribute="top" constant="8" id="IQD-z0-LxI"/>
+                            <constraint firstItem="I84-jq-Lbs" firstAttribute="leading" secondItem="tOr-Fl-MGD" secondAttribute="leading" constant="8" id="RQj-fW-Y3h"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tOr-Fl-MGD"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Photos" id="MY6-yD-VyX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="aoK-iC-c4X">
+                            <connections>
+                                <action selector="cameraButtonPressed" destination="ZEQ-NL-Bl5" id="PV9-JB-Dm1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="collectionView" destination="I84-jq-Lbs" id="3ba-6z-tZb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xzc-iy-Vrj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1236" y="108"/>
+        </scene>
     </scenes>
 </document>

@@ -60,7 +60,7 @@ class PermissionsViewController: UIViewController {
         let alertController = UIAlertController(title: "\(permission.rawValue) Error", message: "Application requires access to your \(permission.rawValue)", preferredStyle: .alert)
 
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        let settingsAction = UIAlertAction(title: "Settings", style: .default) { action in
+        let settingsAction = UIAlertAction(title: "Settings", style: .default) { _ in
             guard let settingsURL = URL(string: UIApplicationOpenSettingsURLString) else {
                 return
             }
@@ -119,7 +119,13 @@ class PermissionsViewController: UIViewController {
     // MARK: - Navigation
 
     func showPhotosViewController() {
+        DispatchQueue.main.async { [weak self] in
+            guard
+                let strongSelf = self,
+                let photosViewController = strongSelf.storyboard?.instantiateViewController(withIdentifier: PhotosViewController.StoryboardIdentifier) else { return }
 
+            strongSelf.navigationController?.setViewControllers([photosViewController], animated: true)
+        }
     }
 
 }
@@ -129,7 +135,11 @@ class PermissionsViewController: UIViewController {
 extension PermissionsViewController: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        permissionsGranted.location = status == .authorizedWhenInUse
+        let granted = status == .authorizedWhenInUse
+
+        if permissionsGranted.location != granted {
+            permissionsGranted.location = granted
+        }
     }
 
 }

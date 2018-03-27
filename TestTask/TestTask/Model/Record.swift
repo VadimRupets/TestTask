@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreLocation
 
-class Record: NSCoding {
+class Record: NSObject, NSCoding {
     let image: UIImage
     let location: CLLocation
 
