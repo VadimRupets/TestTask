@@ -16,6 +16,7 @@ class PhotosViewController: UIViewController {
     private let detailsViewControllerSegueIdentifier = "ShowDetailsViewController"
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
 
     private let recordsManager = RecordsManager()
     private var records: [Record] = []
@@ -34,22 +35,41 @@ class PhotosViewController: UIViewController {
     // MARK: - Fetch and save records
 
     private func fetchRecords() {
-        records = recordsManager.fetchRecords()
-        collectionView.reloadData()
+        activityIndicatorView.startAnimating()
+
+        DispatchQueue.global().async { [weak self] in
+            guard let strongSelf = self else { return }
+
+            strongSelf.records = strongSelf.recordsManager.fetchRecords()
+
+            DispatchQueue.main.async {
+                strongSelf.activityIndicatorView.stopAnimating()
+                strongSelf.collectionView.reloadData()
+            }
+        }
     }
 
     private func saveRecords() {
-        do {
-            try recordsManager.saveRecords(records)
-        } catch {
-            let errorAlert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            errorAlert.addAction(okAction)
+        activityIndicatorView.startAnimating()
 
-            present(errorAlert, animated: true, completion: nil)
+        DispatchQueue.global().async { [weak self] in
+            guard let strongSelf = self else { return }
+
+            do {
+                try strongSelf.recordsManager.saveRecords(strongSelf.records)
+            } catch {
+                let errorAlert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                errorAlert.addAction(okAction)
+
+                strongSelf.present(errorAlert, animated: true, completion: nil)
+            }
+
+            DispatchQueue.main.async {
+                strongSelf.activityIndicatorView.stopAnimating()
+                strongSelf.collectionView.reloadData()
+            }
         }
-
-        collectionView.reloadData()
     }
 
     // MARK: - IBActions
