@@ -8,10 +8,12 @@
 
 import UIKit
 import CoreLocation
+import MapKit
 
 class PhotosViewController: UIViewController {
 
     public static let StoryboardIdentifier = "PhotosViewController"
+    private let mapViewSegueIdentifier = "ShowMapViewController"
 
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -19,6 +21,7 @@ class PhotosViewController: UIViewController {
     private var records: [Record] = []
 
     private let locationManager = CLLocationManager()
+    private let cameraDistance = 10000.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,7 +123,14 @@ extension PhotosViewController: UICollectionViewDelegate {
         }
 
         let mapAction = UIAlertAction(title: "Map", style: .default) { [weak self] _ in
-            // TODO: Add map screen
+            guard let strongSelf = self else { return }
+
+            let record = strongSelf.records[indexPath.row]
+
+            let placemark = MKPlacemark(coordinate: record.location.coordinate)
+            let mapItem = MKMapItem(placemark: placemark)
+            mapItem.name = "You took this photo here"
+            mapItem.openInMaps(launchOptions: nil)
         }
 
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
