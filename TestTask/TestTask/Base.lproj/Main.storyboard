@@ -79,7 +79,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="I84-jq-Lbs">
-                                <rect key="frame" x="8" y="72" width="359" height="587"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="unM-MS-X9b">
                                     <size key="itemSize" width="75" height="75"/>
@@ -105,10 +105,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="tOr-Fl-MGD" firstAttribute="trailing" secondItem="I84-jq-Lbs" secondAttribute="trailing" constant="8" id="1C0-zw-F8j"/>
-                            <constraint firstItem="tOr-Fl-MGD" firstAttribute="bottom" secondItem="I84-jq-Lbs" secondAttribute="bottom" constant="8" id="EIS-ca-zJk"/>
-                            <constraint firstItem="I84-jq-Lbs" firstAttribute="top" secondItem="tOr-Fl-MGD" secondAttribute="top" constant="8" id="IQD-z0-LxI"/>
-                            <constraint firstItem="I84-jq-Lbs" firstAttribute="leading" secondItem="tOr-Fl-MGD" secondAttribute="leading" constant="8" id="RQj-fW-Y3h"/>
+                            <constraint firstItem="tOr-Fl-MGD" firstAttribute="trailing" secondItem="I84-jq-Lbs" secondAttribute="trailing" id="1C0-zw-F8j"/>
+                            <constraint firstItem="tOr-Fl-MGD" firstAttribute="bottom" secondItem="I84-jq-Lbs" secondAttribute="bottom" id="EIS-ca-zJk"/>
+                            <constraint firstItem="I84-jq-Lbs" firstAttribute="top" secondItem="tOr-Fl-MGD" secondAttribute="top" id="IQD-z0-LxI"/>
+                            <constraint firstItem="I84-jq-Lbs" firstAttribute="leading" secondItem="tOr-Fl-MGD" secondAttribute="leading" id="RQj-fW-Y3h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tOr-Fl-MGD"/>
                     </view>

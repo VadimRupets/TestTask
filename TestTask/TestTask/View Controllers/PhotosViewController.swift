@@ -126,6 +126,7 @@ extension PhotosViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 
 extension PhotosViewController: UICollectionViewDelegate {
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let actionSheet = UIAlertController(title: "Actions", message: nil, preferredStyle: .actionSheet)
 
@@ -158,4 +159,29 @@ extension PhotosViewController: UICollectionViewDelegate {
 
         present(actionSheet, animated: true, completion: nil)
     }
+
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension PhotosViewController: UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let collectionViewWidth = collectionView.bounds.size.width
+
+        return CGSize(width: collectionViewWidth / 4, height: collectionViewWidth / 4)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets()
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+
 }
