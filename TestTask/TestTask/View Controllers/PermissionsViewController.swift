@@ -18,9 +18,13 @@ private enum Permission: String {
 
 class PermissionsViewController: UIViewController {
 
+    static let StoryboardIdentifier = "PermissionsViewController"
+
     let locationManager = CLLocationManager()
 
-    var permissionsGranted = (camera: false, location: false) {
+    var permissionsGranted = (
+        camera: PermissionChecker.cameraAuthorizationStatus == .authorized,
+        location: PermissionChecker.locationAuthorizationStatus == .authorizedWhenInUse) {
         didSet {
             if permissionsGranted.camera && permissionsGranted.location {
                 showPhotosViewController()
@@ -44,9 +48,6 @@ class PermissionsViewController: UIViewController {
     // MARK: - Permissions access
 
     @objc private func checkPermissions() {
-        permissionsGranted.camera = AVCaptureDevice.authorizationStatus(for: .video) == .authorized
-        permissionsGranted.location = CLLocationManager.authorizationStatus() == .authorizedWhenInUse
-
         if !permissionsGranted.camera {
             askForCameraPermission()
         }
@@ -90,8 +91,7 @@ class PermissionsViewController: UIViewController {
             return
         }
 
-        let cameraAuthStatus = AVCaptureDevice.authorizationStatus(for: .video)
-        switch cameraAuthStatus {
+        switch PermissionChecker.cameraAuthorizationStatus {
         case .authorized:
             break
         case .denied:
@@ -104,9 +104,7 @@ class PermissionsViewController: UIViewController {
     }
 
     @IBAction func askForLocationPermission() {
-        let locationAuthStatus = CLLocationManager.authorizationStatus()
-
-        switch locationAuthStatus {
+        switch PermissionChecker.locationAuthorizationStatus {
         case .denied:
             askForPermissionViaSettings(.location)
         case .authorizedWhenInUse:

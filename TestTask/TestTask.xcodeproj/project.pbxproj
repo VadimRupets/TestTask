@@ -18,6 +18,7 @@
 		DDF229F0206A348200981262 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF229EE206A348200981262 /* PhotoCollectionViewCell.swift */; };
 		DDF229F1206A348200981262 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDF229EF206A348200981262 /* PhotoCollectionViewCell.xib */; };
 		DDF229F5206A55FA00981262 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF229F4206A55FA00981262 /* DetailsViewController.swift */; };
+		DDF229F9206A791400981262 /* PermissionChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF229F8206A791400981262 /* PermissionChecker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		DDF229EE206A348200981262 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		DDF229EF206A348200981262 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		DDF229F4206A55FA00981262 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		DDF229F8206A791400981262 /* PermissionChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionChecker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				DDF229EA206A2D7A00981262 /* View Controllers */,
 				DDF229DF20692FED00981262 /* Model */,
 				DDF229CB2069111000981262 /* AppDelegate.swift */,
+				DDF229F8206A791400981262 /* PermissionChecker.swift */,
 				DDF229CF2069111000981262 /* Main.storyboard */,
 				DDF229D22069111000981262 /* Assets.xcassets */,
 				DDF229D42069111000981262 /* LaunchScreen.storyboard */,
@@ -179,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDF229F9206A791400981262 /* PermissionChecker.swift in Sources */,
 				DDF229EC206A2DA800981262 /* RecordsManager.swift in Sources */,
 				DDF229CC2069111000981262 /* AppDelegate.swift in Sources */,
 				DDF229E820693CC000981262 /* PhotosViewController.swift in Sources */,
